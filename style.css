@@ -18,12 +18,14 @@ body, html {
     overflow: hidden; /* Prevent scrolling, act like a full screen app */
     font-family: var(--font-body);
     background-color: #111;
+    display: flex;
+    flex-direction: column;
 }
 
 #board-container {
     position: relative;
+    flex: 1;
     width: 100vw;
-    height: 100vh;
     background-image: url('30_seconds_board.png');
     background-size: contain;
     background-position: center;
@@ -226,3 +228,66 @@ header h1 {
 .hidden {
     display: none !important;
 }
+
+/* === RESPONSIVE DESIGN === */
+
+/* Mobile Landscape (Shrink panel heavily, keep floating) */
+@media (max-width: 900px) and (orientation: landscape) {
+    #ui-panel {
+        width: 220px;
+        padding: 10px;
+        gap: 10px;
+        top: 10px;
+        right: 10px;
+    }
+    .panel-section {
+        padding: 10px;
+    }
+    #timer-display { font-size: 2.5rem; margin-bottom: 5px; }
+    #dice-display { font-size: 2rem; min-height: 40px; margin-bottom: 5px; }
+    header h1 { font-size: 1rem; }
+    .btn { font-size: 0.8rem; padding: 6px 10px; }
+    .chip { width: 30px; height: 30px; }
+}
+
+/* Mobile Portrait (Dock panel to bottom, reflow content) */
+@media (orientation: portrait) {
+    body, html {
+        flex-direction: column;
+    }
+    #board-container {
+        width: 100%;
+        flex: 1; /* Board takes upper portion */
+    }
+    #ui-panel {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding: 15px;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        align-items: stretch;
+    }
+    #ui-panel header {
+        grid-column: 1 / -1;
+        margin-bottom: 5px;
+    }
+    .settings-section {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 5px;
+    }
+    .panel-section {
+        padding: 10px;
+    }
+    #timer-display { font-size: 2.5rem; margin-bottom: 10px; }
+    #dice-display { font-size: 2rem; min-height: 40px; margin-bottom: 10px; }
+    .chip { width: 25px; height: 25px; border-width: 2px; }
+    .btn { font-size: 0.8rem; padding: 8px 10px; }
+}
+

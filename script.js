@@ -205,11 +205,12 @@ function drag(e) {
         let newX = clientX - initialX;
         let newY = clientY - initialY;
 
-        // Bounding logic to keep chip on-screen
+        // Bounding logic to keep chip within container
+        const container = document.getElementById('board-container');
         const minX = -activeChip.offsetLeft;
         const minY = -activeChip.offsetTop;
-        const maxX = window.innerWidth - activeChip.offsetLeft - activeChip.offsetWidth;
-        const maxY = window.innerHeight - activeChip.offsetTop - activeChip.offsetHeight;
+        const maxX = container.clientWidth - activeChip.offsetLeft - activeChip.offsetWidth;
+        const maxY = container.clientHeight - activeChip.offsetTop - activeChip.offsetHeight;
 
         currentX = Math.max(minX, Math.min(newX, maxX));
         currentY = Math.max(minY, Math.min(newY, maxY));
