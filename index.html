@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Seconds - Digital Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="board-container">
+        <!-- Board image will be set as background via CSS -->
+        
+        <!-- Draggable Chips -->
+        <div id="chips-container">
+            <div class="chip" id="chip-red" style="background-color: #ff4757;"></div>
+            <div class="chip" id="chip-blue" style="background-color: #1e90ff;"></div>
+            <div class="chip" id="chip-green" style="background-color: #2ed573;"></div>
+            <div class="chip" id="chip-yellow" style="background-color: #eccc68;"></div>
+            <div class="chip" id="chip-purple" style="background-color: #9b59b6;"></div>
+            <div class="chip" id="chip-orange" style="background-color: #ffa502;"></div>
+        </div>
+    </div>
+
+    <!-- UI Overlay Controls -->
+    <div id="ui-panel">
+        <header>
+            <h1>30 SECONDS</h1>
+        </header>
+
+        <!-- Dice Section -->
+        <div class="panel-section" id="dice-section">
+            <div id="dice-display">?</div>
+            <button id="btn-roll" class="btn"><i class="fa-solid fa-dice"></i> Roll Dice</button>
+        </div>
+
+        <!-- Timer Section -->
+        <div class="panel-section" id="timer-section">
+            <div id="timer-display">30</div>
+            <div class="timer-controls">
+                <button id="btn-start-timer" class="btn btn-primary" title="Start Timer"><i class="fa-solid fa-play"></i></button>
+                <button id="btn-pause-timer" class="btn" title="Pause Timer"><i class="fa-solid fa-pause"></i></button>
+                <button id="btn-reset-timer" class="btn" title="Reset Timer"><i class="fa-solid fa-rotate-left"></i></button>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="panel-section settings-section">
+            <button id="btn-toggle-sound" class="btn-icon" title="Toggle Sound"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="btn-toggle-chips" class="btn-icon" title="Toggle Chips"><i class="fa-solid fa-chess-pawn"></i></button>
+            <button id="btn-toggle-dice" class="btn-icon" title="Toggle Dice"><i class="fa-solid fa-dice"></i></button>
+            <button id="btn-toggle-timer" class="btn-icon" title="Toggle Timer"><i class="fa-solid fa-stopwatch"></i></button>
+            <button id="btn-reset-game" class="btn-icon text-danger" title="Reset Game" style="color: #ff4757; margin-left: auto;"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
